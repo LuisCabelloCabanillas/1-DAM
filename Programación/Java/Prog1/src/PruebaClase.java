@@ -13,12 +13,12 @@ public class PruebaClase {
         System.out.println(Constante.NUMERO_DOS);
         System.out.println(Constante.getSaludoPorDefecto());
 
-        Persona pers1 = new Persona("Pepe","Pérez",43);
+        Personas pers1 = new Personas("Pepe","Pérez",43);
 
-        Persona pers2 = new Persona("Pepa","López");
+        Personas pers2 = new Personas("Pepa","López");
         pers2.setEdad(45);
-        Persona pers3 = new Persona("Pepe","Pérez",23);
-        Persona pers4 = new Hijo("Emilio","Pérez",23,pers1,pers2);
+        Personas pers3 = new Personas("Pepe","Pérez",23);
+        Personas pers4 = new Hijo("Emilio","Pérez",23,pers1,pers2);
 
         System.out.println(pers1.getNombre()+ " "+ pers1.getApellido()+", "+ pers1.getEdad());
         System.out.println(pers2);

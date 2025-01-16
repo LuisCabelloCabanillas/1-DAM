@@ -1,14 +1,16 @@
-public class Persona {
+public class Personas {
     private String nombre;
     private String apellido;
+    private String DNI;
     private int edad;
 
-    public Persona(String nombre, String apellido, int edad) {
+    public Personas(String nombre, String apellido, int edad, String DNI) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
+        this.DNI = DNI;
     }
-    public Persona(String nombre, String apellido) {
+    public Personas(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = 0;
@@ -39,9 +41,9 @@ public class Persona {
         return mensaje;
     }
     public boolean equals(Object obj) {
-        boolean respuesta = ((Persona)obj).nombre.equals(nombre);
-        respuesta = respuesta && ((Persona)obj).apellido.equals(apellido);
-        respuesta = respuesta && ((Persona)obj).edad==(edad);
+        boolean respuesta = ((Personas)obj).nombre.equals(nombre);
+        respuesta = respuesta && ((Personas)obj).apellido.equals(apellido);
+        respuesta = respuesta && ((Personas)obj).edad==(edad);
         return respuesta;
     }
 }
