@@ -1,12 +1,25 @@
 import java.util.Scanner;
 
 public class Act11 {
-    public static void main(String[] args) {
-        System.out.println("Escribe un número para hacer su factorial: " );
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        for (; a <= 1 ; a--) {
-            System.out.println(a);
+        public static int calcularFactorial(int n) {
+            if (n == 0) {
+                return 1;
+            }
+            int factorial = 1;
+            for (int i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+
+            return factorial;
         }
-    }
+
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Ingresa un número entero: ");
+            int numero = scanner.nextInt();
+
+            int resultado = calcularFactorial(numero);
+            System.out.println("El factorial de " + numero + " es: " + resultado);
+        }
 }
