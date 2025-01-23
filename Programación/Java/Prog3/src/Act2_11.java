@@ -1,3 +1,2 @@
-public class Act2_11
-{
+public class Act2_11 {
 }
