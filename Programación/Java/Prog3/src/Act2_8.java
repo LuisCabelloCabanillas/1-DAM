@@ -1,17 +1,18 @@
 import java.util.Scanner;
 
 public class Act2_8 {
-    public static void main(String[] args) {
-        int a;
-        do{
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Ingrese un número entero positivo: ");
-            a=sc.nextInt();
+    public int contarDigitos(int numero) {
+        return String.valueOf(numero).length();
+    }
 
-            if(a<0){
-            System.out.println("El número entero debe ser positivo");
-            }
-        }while(a < 0);
-            System.out.println("El número entero es positivo");
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce un número entero positivo: ");
+        int numero = scanner.nextInt();
+
+        Act2_8 contador = new Act2_8();
+        int cantidadDigitos = contador.contarDigitos(numero);
+
+        System.out.println("El número " + numero + " tiene " + cantidadDigitos + " dígitos.");
     }
 }
