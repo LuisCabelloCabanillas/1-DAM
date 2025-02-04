@@ -73,6 +73,7 @@
     padding: 0.5rem;
     text-align: center;
     border-radius: 0.25rem;
+    color: #ff5722;
 }
 
 .hotel-image {
@@ -101,4 +102,8 @@
     background: none;
     cursor: pointer;
     margin-left: 0.5rem;
+}
+
+.auth-item{
+    color: #ff5722;
 }
