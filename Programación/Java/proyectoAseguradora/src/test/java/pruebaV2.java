@@ -27,5 +27,8 @@ public class pruebaV2 {
         System.out.println(UtilidadesVehiculo.calculaEdad(vehiculo));
 
         System.out.println(UtilidadesVehiculo.validaFechaMatriculacion(LocalDate.of(2025,2,4)));
+
+        System.out.println(UtilidadesVehiculo.esMatriculaValida(vehiculo));
+        System.out.println(UtilidadesVehiculo.esMatriculaValida("0366DFF"));
     }
 }

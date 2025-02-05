@@ -11,8 +11,15 @@ public class Personas {
     private String nif;
     private LocalDate fechaNacimiento;
     private Direccion direccion;
+    private Sexo sexo;
+    private String paisOrigen;
+    private String email;
+    private String telefono;
 
-    public Personas(int idPersona, String nombre, String apellido1, String apellido2, String nif, LocalDate fechaNacimiento, Direccion direccion) {
+    private enum Sexo { MASCULINO, FEMENINO, NA }
+
+    public Personas(int idPersona, String nombre, String apellido1, String apellido2, String nif, LocalDate fechaNacimiento, Direccion direccion,
+                    Sexo sexo, String paisOrigen, String email, String telefono) {
         this.idPersona = idPersona;
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -20,6 +27,10 @@ public class Personas {
         this.nif = nif;
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
+        this.sexo = sexo;
+        this.paisOrigen = paisOrigen;
+        this.email = email;
+        this.telefono = telefono;
     }
 
     public Personas(Personas persona) {
@@ -30,6 +41,10 @@ public class Personas {
         this.nif = persona.nif;
         this.fechaNacimiento = persona.fechaNacimiento;
         this.direccion = persona.direccion;
+        this.sexo = persona.sexo;
+        this.paisOrigen = persona.paisOrigen;
+        this.email = persona.email;
+        this.telefono = persona.telefono;
     }
 
     public Personas() {
@@ -40,6 +55,10 @@ public class Personas {
         nif= "47563665X";
         fechaNacimiento= LocalDate.now();
         direccion= null;
+        sexo= Sexo.MASCULINO;
+        paisOrigen= "Cabello";
+        email= "Cabello@gmail.com";
+        telefono= "123456";
     }
 
 
@@ -100,16 +119,36 @@ public class Personas {
         this.direccion = direccion;
     }
 
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public String getPaisOrigen() {
+        return paisOrigen;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
     @Override
     public String toString() {
         return "Personas{" +
-                "idPersona=" + getIdPersona() +
-                ", nombre='" + getNombre() + '\'' +
-                ", apellido1='" + getApellido1() + '\'' +
-                ", apellido2='" + getApellido2() + '\'' +
-                ", nif='" + getNif() + '\'' +
-                ", fechaNacimiento=" + getFechaNacimiento() +
-                ", direccion=" + getDireccion() +
+                "idPersona=" + idPersona +
+                ", nombre='" + nombre + '\'' +
+                ", apellido1='" + apellido1 + '\'' +
+                ", apellido2='" + apellido2 + '\'' +
+                ", nif='" + nif + '\'' +
+                ", fechaNacimiento=" + fechaNacimiento +
+                ", direccion=" + direccion +
+                ", sexo=" + sexo +
+                ", paisOrigen='" + paisOrigen + '\'' +
+                ", email='" + email + '\'' +
+                ", telefono='" + telefono + '\'' +
                 '}';
     }
 
@@ -117,11 +156,11 @@ public class Personas {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Personas personas = (Personas) o;
-        return idPersona == personas.idPersona && Objects.equals(nombre, personas.nombre) && Objects.equals(apellido1, personas.apellido1) && Objects.equals(apellido2, personas.apellido2) && Objects.equals(nif, personas.nif) && Objects.equals(fechaNacimiento, personas.fechaNacimiento) && Objects.equals(direccion, personas.direccion);
+        return idPersona == personas.idPersona && Objects.equals(nombre, personas.nombre) && Objects.equals(apellido1, personas.apellido1) && Objects.equals(apellido2, personas.apellido2) && Objects.equals(nif, personas.nif) && Objects.equals(fechaNacimiento, personas.fechaNacimiento) && Objects.equals(direccion, personas.direccion) && sexo == personas.sexo && Objects.equals(paisOrigen, personas.paisOrigen) && Objects.equals(email, personas.email) && Objects.equals(telefono, personas.telefono);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPersona, nombre, apellido1, apellido2, nif, fechaNacimiento, direccion);
+        return Objects.hash(idPersona, nombre, apellido1, apellido2, nif, fechaNacimiento, direccion, sexo, paisOrigen, email, telefono);
     }
 }
