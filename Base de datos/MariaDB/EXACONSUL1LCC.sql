@@ -5,6 +5,13 @@ select max(precio) 'PRECIO MÁXIMOLCC', min(precio) 'PRECIO MINIMO', avg(precio)
 from producto
 where codigo_fabricante = 6;
 
+select max(precio) as 'Precio maximo', min(precio) as 'precio minimo', 
+avg(precio) as 'precio medio', count(*) as 'Nº de productos crucial' 
+from producto p 
+where codigo_fabricante = (select codigo 
+							from fabricante f 
+							where nombre = 'Crucial');
+
 
 /*Consulta nº2 */
 select codigo_fabricante 'CÓDIGO FABRICANTELCC', max(precio) 'PRECIO MÁXIMO', min(precio) 'PRECIO MÍNIMO',
@@ -30,6 +37,14 @@ from producto
 where precio < (select max(precio)
 				from producto
 				where codigo_fabricante = 2)
+order by precio;
+
+SELECT CODIGO AS "CÓDIGO", NOMBRE AS "NOMBRE", PRECIO, 
+CODIGO_FABRICANTE AS "CÓDIGO DEL FABRICANTE" FROM PRODUCTO WHERE PRECIO < (SELECT MAX(PRECIO) 
+FROM PRODUCTO 
+WHERE CODIGO_FABRICANTE = (SELECT CODIGO 
+							FROM FABRICANTE 
+							WHERE NOMBRE = 'Lenovo')) 
 order by precio;
 
 
