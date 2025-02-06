@@ -1,7 +1,8 @@
 /*Luis Cabello Cabanillas*/
 
 /*Consulta nº1 */
-select max(precio) 'PRECIO MÁXIMOLCC', min(precio) 'PRECIO MINIMO', avg(precio) 'PRECIO MEDIO', count(codigo_fabricante) 'Nº TOTAL DE PRODUCTOS DE CRUCIAL'
+select max(precio) 'PRECIO MÁXIMOLCC', min(precio) 'PRECIO MINIMO', 
+avg(precio) 'PRECIO MEDIO', count(codigo_fabricante) 'Nº TOTAL DE PRODUCTOS DE CRUCIAL'
 from producto
 where codigo_fabricante = 6;
 
@@ -40,7 +41,9 @@ where precio < (select max(precio)
 order by precio;
 
 SELECT CODIGO AS "CÓDIGO", NOMBRE AS "NOMBRE", PRECIO, 
-CODIGO_FABRICANTE AS "CÓDIGO DEL FABRICANTE" FROM PRODUCTO WHERE PRECIO < (SELECT MAX(PRECIO) 
+CODIGO_FABRICANTE AS "CÓDIGO DEL FABRICANTE" 
+FROM PRODUCTO 
+WHERE PRECIO < (SELECT MAX(PRECIO) 
 FROM PRODUCTO 
 WHERE CODIGO_FABRICANTE = (SELECT CODIGO 
 							FROM FABRICANTE 

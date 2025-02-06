@@ -1,30 +1,33 @@
 public class ExplicacionDebug {
-    /*Para depurar este código en IntelliJ IDEA y analizar los valores de la variable cadena en cada iteración de los bucles do-while, sigue estos pasos:
 
-1. Colocar Puntos de Interrupción (Breakpoints)
-Abre el archivo que contiene el código en IntelliJ IDEA.
-Haz clic en el margen izquierdo, al lado de las líneas de código donde deseas pausar la ejecución. En este caso, coloca breakpoints en:
-System.out.println(cadena); (línea 7)
-System.out.println(cadena); (línea 13)
-System.out.println(cadena); (línea 17)
-2. Iniciar el Debugger
-Ejecuta el programa en modo depuración haciendo clic en el botón Debug (o presionando Shift + F9).
-La ejecución se detendrá en cada breakpoint, permitiéndote analizar el estado de las variables.
-3. Analizar la Variable cadena en Cada Iteración
-Inicio: cadena = "a" → Se imprime "a".
-Primer do-while (cadena.length() < 5):
-Se concatena "e" en cada iteración:
-"ae" (longitud 2)
-"aee" (longitud 3)
-"aeee" (longitud 4)
-"aeeee" (longitud 5) → Se rompe el do-while
-Se imprime "aeeee".
-Segundo do-while (cadena.length() < 3):
-Como "aeeee" tiene longitud 5, no entra en el bucle.
-Se imprime "aeeee".
-4. Usar la Ventana de Variables
-En la pestaña Debug, puedes ver el valor de cadena en cada paso.
-También puedes usar la consola del Debugger para evaluar expresiones en tiempo real.
-Conclusión
-El debug permite visualizar cómo la variable cadena cambia en cada iteración de los do-while. El segundo bucle no se ejecuta porque cadena.length() ya es 5 al llegar a esa parte.*/
-}
+    public static void main(String[] args) {
+        String cadena = "a";
+        System.out.println(cadena);
+        do{
+            cadena = cadena + "e";
+        }while(cadena.length() < 5);
+        System.out.println(cadena);
+        do {
+            cadena = cadena + "i";
+        }while(cadena.length() < 3);
+        System.out.println(cadena);
+    }
+    /*Para depurar este código en este IDE y poder analizar los valores de la variable en cada iteración de los bucles do-while,hay que seguir estos pasos:
+    Primero debemos de colocar los puntos de interrupción, para ello haremos click en los margenes izquierdos
+    donde querramos comprobar el código en este caso yo los voy a poner en:
+    System.out.println(cadena) (línea 7)
+    System.out.println(cadena) (línea 13)
+    System.out.println(cadena) (línea 17)
+
+    Como segundo paso iniciaremos el Debugger, para ejecutarlo pulsaremos el icono de insecto de la barra de arriba o pulsaremos Mayus+F9
+    durante el proceso de debug se detendra en cada punto de interrupción que hayamos puesto pudiendo asi observar el estado de la variable
+
+    Tercero se analizá la variable cadena en cada iteración
+    Al inicio la cadena muestra "a".
+    En el primer do-while (cadena.length() < 5):
+    Se concatena "e" en cada iteración hata llegar a "aeeee" en la que se rompe el do-while
+
+    En el segundo do-while (cadena.length() < 3):
+    Como "aeeee" se le suma la i porque en la iteración lo añade pero una vez entra en el while este lo expulsa ya que la longitud es mayor que 3
+    Se imprime "aeeeei".*/
+    }

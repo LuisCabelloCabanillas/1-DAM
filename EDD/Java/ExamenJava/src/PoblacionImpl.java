@@ -56,16 +56,15 @@ public class PoblacionImpl {
     }
 
     public double getPorcentajeDesempleo() {
-        return ((double) (numeroHabitantes - numPersonasEmpleadas) / numeroHabitantes) * 100;
+        return ((double) (getNumeroHabitantes() - getNumPersonasEmpleadas()) / getNumeroHabitantes()) * 100;
     }
 
     public double getDensidadPoblacion() {
-        return numeroHabitantes / superficie;
+        return getNumeroHabitantes() / getSuperficie();
     }
 
-    @Override
     public String toString() {
-        return nombre + " posee una densidad de población de " + getDensidadPoblacion() + " hab/km2. " +
-                "Una de sus fiestas más famosas es " + getFestividad().toString();
+        return getNombre() + " posee una densidad de población de " + getDensidadPoblacion() + " hab/km2. " +
+                "Una de sus \nfiestas más famosas es " + getFestividad();
     }
 }

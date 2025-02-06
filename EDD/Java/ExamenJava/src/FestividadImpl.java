@@ -19,8 +19,7 @@ public class FestividadImpl {
         this.mes = mes;
     }
 
-    @Override
     public String toString() {
-        return nombreFiesta + ", en " + mes + ".";
+        return getNombreFiesta() + ", en " + getMes() + ".";
     }
 }
