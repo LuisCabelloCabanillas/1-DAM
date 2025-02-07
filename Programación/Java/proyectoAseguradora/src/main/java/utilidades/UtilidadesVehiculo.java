@@ -83,7 +83,4 @@ public class UtilidadesVehiculo {
         }
         return resultado;
     }
-    public static boolean validaFechaMatriculacion(LocalDate fecha) {
-        return fecha != null && !fecha.isAfter(LocalDate.now());
-    }
 }

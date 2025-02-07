@@ -9,8 +9,8 @@ public class Conductor extends Personas {
     private int anyosAsegurados;
 
     public Conductor(int idPersona, String nombre, String apellido1, String apellido2, String nif, LocalDate fechaNacimiento,
-                     Direccion direccion, LocalDate fechaCarnet, int puntosCarnet, int anyosAsegurados) {
-        super(idPersona, nombre, apellido1, apellido2, nif, fechaNacimiento, direccion);
+                     Direccion direccion, Sexo sexo, String paisOtigen, String email, String telefono, LocalDate fechaCarnet, int puntosCarnet, int anyosAsegurados) {
+        super(idPersona, nombre, apellido1, apellido2, nif, fechaNacimiento, direccion, sexo, paisOtigen, email, telefono);
         this.fechaCarnet = fechaCarnet;
         this.puntosCarnet = puntosCarnet;
         this.anyosAsegurados = anyosAsegurados;

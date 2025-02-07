@@ -16,7 +16,7 @@ public class Personas {
     private String email;
     private String telefono;
 
-    private enum Sexo { MASCULINO, FEMENINO, NA }
+    public enum Sexo { MASCULINO, FEMENINO, NA }
 
     public Personas(int idPersona, String nombre, String apellido1, String apellido2, String nif, LocalDate fechaNacimiento, Direccion direccion,
                     Sexo sexo, String paisOrigen, String email, String telefono) {
