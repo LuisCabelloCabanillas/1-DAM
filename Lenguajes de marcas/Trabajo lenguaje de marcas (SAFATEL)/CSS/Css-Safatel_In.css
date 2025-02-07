@@ -107,3 +107,8 @@
 .auth-item{
     color: #ff5722;
 }
+
+.nav-item.auth-item a {
+    text-decoration: none;
+    color: #ff5722;
+}
